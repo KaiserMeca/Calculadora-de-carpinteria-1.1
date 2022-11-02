@@ -6,12 +6,13 @@ public partial class Presupuesto : ContentPage
     public Presupuesto(List<Abertura> abertura)
     {
         InitializeComponent();
-        BindingContext = abertura;
+        //BindingContext = abertura;
         lista = abertura;
+        cargarFecha();
         cargarPresupuesto();
     }
     List<Abertura> lista = new List<Abertura>();
-    public double spacio = 90;
+    public double spacio = 115;
     string lineaAbreviatura;
     string tipoAbreviatura;
     public void cargarPresupuesto()
@@ -31,7 +32,7 @@ public partial class Presupuesto : ContentPage
                         {
                             new Editor
                             {
-                                TextColor = Color.FromArgb("#F5811E"),
+                                TextColor = Colors.Black,
                                 Text = tipoAbreviatura + "-" + lineaAbreviatura,
                                 FontSize = 11,
                                 FontAttributes = FontAttributes.Bold,
@@ -40,20 +41,9 @@ public partial class Presupuesto : ContentPage
                                 HorizontalTextAlignment = TextAlignment.Center,
                                 Margin = new Thickness(8,0,0,0)
                             },
-
-                            //new Entry
-                            //{
-                            //    TextColor = Color.FromArgb("#F5811E"),
-                            //    Text = item.Tipo.ToString(),
-                            //    FontSize = 11,
-                            //    FontAttributes = FontAttributes.Bold,
-                            //    HorizontalOptions = LayoutOptions.Start,
-                            //    WidthRequest = 70,
-                            //    HorizontalTextAlignment = TextAlignment.Center
-                            //},
                             new Editor
                             {
-                                TextColor = Color.FromArgb("#F5811E"),
+                                TextColor = Colors.Black,
                                 Text = item.Ancho.ToString() + "x" + item.Alto.ToString(),
                                 FontSize = 11,
                                 FontAttributes = FontAttributes.Bold,
@@ -61,20 +51,10 @@ public partial class Presupuesto : ContentPage
                                 WidthRequest = 100,
                                 HorizontalTextAlignment = TextAlignment.Center,
                                 Margin = new Thickness(4,0,0,0)
-        },
-                            //new Entry
-                            //{
-                            //    TextColor = Color.FromArgb("#F5811E"),
-                            //    Text = item.Alto.ToString(),
-                            //    FontSize = 11,
-                            //    FontAttributes = FontAttributes.Bold,
-                            //    HorizontalOptions = LayoutOptions.Start,
-                            //    WidthRequest = 50,
-                            //    HorizontalTextAlignment = TextAlignment.Center
-                            //},
+                            },
                             new Editor
                             {
-                                TextColor = Color.FromArgb("#F5811E"),
+                                TextColor = Colors.Black,
                                 Text = item.Cantidad.ToString(),
                                 FontSize = 11,
                                 FontAttributes = FontAttributes.Bold,
@@ -84,7 +64,7 @@ public partial class Presupuesto : ContentPage
                             },
                             new Editor
                             {
-                                TextColor = Color.FromArgb("#F5811E"),
+                                TextColor = Colors.Black,
                                 Text = item.PrecioUnitario.ToString(),
                                 FontSize = 11,
                                 FontAttributes = FontAttributes.Bold,
@@ -95,7 +75,7 @@ public partial class Presupuesto : ContentPage
                             },
                             new Editor
                             {
-                                TextColor = Color.FromArgb("#F5811E"),
+                                TextColor = Colors.Black,
                                 Text = item.PrecioFinal.ToString(),
                                 FontSize = 11,
                                 FontAttributes = FontAttributes.Bold,
@@ -114,6 +94,7 @@ public partial class Presupuesto : ContentPage
     }
     public void Abreviaturas(string Linea, string Tipo)
     {
+        #region Abreviaturas
         switch (Linea)
         {
             case "Modena":
@@ -175,7 +156,7 @@ public partial class Presupuesto : ContentPage
                     break;
                 }
         }
-            
+        #endregion
     }
 
     private void BtnNuevaAbertura_Clicked(object sender, EventArgs e)
@@ -186,5 +167,10 @@ public partial class Presupuesto : ContentPage
     private void BtnFinalizarPresu_Clicked(object sender, EventArgs e)
     {
 
+    }
+    public void cargarFecha()
+    {
+        var c = DateTime.Now;
+        entryFecha.Text = Convert.ToString(c);
     }
 }

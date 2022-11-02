@@ -4,18 +4,28 @@
              xmlns:Local="clr-namespace:Calculadora_de_carpinteria_1._1"
              x:Class="Calculadora_de_carpinteria_1._1.Presupuesto"
              Title="Presupuesto">
-    <AbsoluteLayout x:Name="layoutPrincipal" BackgroundColor="White">
-        <HorizontalStackLayout Margin="0,65,0,20" BackgroundColor="#FFB700" WidthRequest="700" HeightRequest="40">
+    <AbsoluteLayout x:Name="layoutPrincipal" BackgroundColor="#E0E0E0">
+        <HorizontalStackLayout>
+            <!--<Label Text="Cliente:" Margin="15,20,0,0" FontSize="13" FontAttributes="Bold"></Label>-->
+            <Entry  Placeholder="Nombre del cliente" FontSize="12" Margin="15,10,0,0" FontAttributes="Bold"></Entry>
+            <Entry  Placeholder="Nombre de la empresa" FontSize="12" Margin="80,10,0,0" FontAttributes="Bold"></Entry>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Fecha:" Margin="15,50,0,0" FontSize="13" FontAttributes="Bold"></Label>
+            <Entry x:Name="entryFecha" WidthRequest="75" FontSize="12" Margin="5,40,0,0"></Entry>
+            <Entry Placeholder="Telefono" FontSize="12" Margin="90,40,0,0" FontAttributes="Bold"></Entry>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Margin="0,100,0,20" BackgroundColor="#FFB700" WidthRequest="700" HeightRequest="40">
             <Label Text="Abertura" FontSize="12" TextColor="Black" WidthRequest="123" HorizontalTextAlignment="Center" Padding="19,0,0,0"
-                   VerticalTextAlignment="Center"></Label>
+                   VerticalTextAlignment="Center" FontAttributes="Bold"></Label>
             <Label Text="Medida" FontSize="12" TextColor="Black" WidthRequest="100" HorizontalTextAlignment="Center" Margin="19,0,0,0"
-                   VerticalTextAlignment="Center" ></Label>
+                   VerticalTextAlignment="Center" FontAttributes="Bold"></Label>
             <Label Text="Cant" FontSize="12" TextColor="Black" WidthRequest="35" HorizontalTextAlignment="Center" Margin="-6,0,0,0"
-                   VerticalTextAlignment="Center"></Label>
+                   VerticalTextAlignment="Center" FontAttributes="Bold"></Label>
             <Label Text="$ Unit" FontSize="12" TextColor="Black" WidthRequest="65" HorizontalTextAlignment="Center" Margin="0,0,0,0"
-                   VerticalTextAlignment="Center"></Label>
+                   VerticalTextAlignment="Center" FontAttributes="Bold"></Label>
             <Label Text="$ Total" FontSize="12" TextColor="Black" WidthRequest="70" HorizontalTextAlignment="Center" Margin="4,0,0,0"
-                   VerticalTextAlignment="Center"></Label>
+                   VerticalTextAlignment="Center" FontAttributes="Bold"></Label>
         </HorizontalStackLayout>
             <Button x:Name="BtnNuevaAbertura" Text="Agregar abertura" FontSize="13" CornerRadius="10" Margin="20,690,0,0"
                 BackgroundColor="#FFB700" FontAttributes="Bold" Clicked="BtnNuevaAbertura_Clicked" HeightRequest="45" Padding="20,0,20,0"></Button>

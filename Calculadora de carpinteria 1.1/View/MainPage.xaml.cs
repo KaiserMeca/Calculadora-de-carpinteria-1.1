@@ -13,5 +13,10 @@ public partial class MainPage : ContentPage
     {
         Navigation.PushAsync(new CargarAberturas());
     }
+
+    private void BtnCargarPrecios_Clicked(object sender, EventArgs e)
+    {
+        DisplayAlert("Proximamente","Pronto vas a poder guardar los precios del aluminio y de los vidrios!","Genial!");
+    }
 }
 
