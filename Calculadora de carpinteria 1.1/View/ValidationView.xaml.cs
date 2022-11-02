@@ -14,6 +14,7 @@ public partial class ValidationView : ContentPage
     public ValidationView(ISecureStorageService secureStorageService)
     {
         InitializeComponent();
+        entryClave.Text = "";
         SecureStorageServiceIn = secureStorageService;
         _ = recuperarClave(null);
         //PrincipalPage.IsVisible = false;
@@ -21,7 +22,7 @@ public partial class ValidationView : ContentPage
 
     private void Entrar_Clicked(object sender, EventArgs e)
     {
-        if (claveRecuperada == entryClave.Text.ToUpper())
+        if (claveRecuperada == entryClave.Text)
         {
             Navigation.PushAsync(new MainPage());
         }

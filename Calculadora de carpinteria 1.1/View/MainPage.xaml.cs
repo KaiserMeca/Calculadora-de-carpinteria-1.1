@@ -7,6 +7,7 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
+        Line();
     }
 
     private void Button_Clicked(object sender, EventArgs e)
@@ -20,11 +21,28 @@ public partial class MainPage : ContentPage
     }
     public void Line()
     {
-        //var dispatcher = Application.Current.Dispatcher; // if your context isn't a BindableObject (if your context is a BO then just this.Dispatcher...)
-        //var timer = dispatcher.CreateTimer();
-        //timer.Interval = TimeSpan.FromSeconds(1);
-        //timer.Tick += (s, e) => this.DateTime = DateTime.Now;
-        //timer.Start();
+        int count = 0;
+        double coun2 = 0;
+        var dispatcher = Application.Current.Dispatcher; 
+        var timer = dispatcher.CreateTimer();
+        timer.Interval = TimeSpan.FromMilliseconds(1);
+        timer.Tick += (s, e) =>
+        {
+            count += 1;
+            Linea1.Rotation = count;
+            Linea2.Rotation = count;
+            Linea3.Rotation = count;
+            if (count == 90)
+            {
+                timer.Stop();
+            }
+            coun2 += 3.66;
+            Linea1.Margin = new Thickness(0,0,coun2,0);
+            Linea2.Margin = new Thickness(0, 0, coun2, 0);
+            Linea3.Margin = new Thickness(0, 0, coun2, 0);
+
+        };
+        timer.Start();
     }
 }
 
