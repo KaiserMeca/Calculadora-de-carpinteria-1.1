@@ -65,7 +65,7 @@ public partial class Presupuesto : ContentPage
                             new Editor
                             {
                                 TextColor = Colors.Black,
-                                Text = item.PrecioUnitario.ToString(),
+                                Text = "$" + item.PrecioUnitario.ToString(),
                                 FontSize = 11,
                                 FontAttributes = FontAttributes.Bold,
                                 HorizontalOptions = LayoutOptions.Center,
@@ -76,7 +76,7 @@ public partial class Presupuesto : ContentPage
                             new Editor
                             {
                                 TextColor = Colors.Black,
-                                Text = item.PrecioFinal.ToString(),
+                                Text = "$" + item.PrecioFinal.ToString(),
                                 FontSize = 11,
                                 FontAttributes = FontAttributes.Bold,
                                 HorizontalOptions = LayoutOptions.Center,

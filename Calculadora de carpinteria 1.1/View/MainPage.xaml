@@ -23,21 +23,28 @@
             <Button CornerRadius="50" WidthRequest="50" Text="4" Margin="0,0,10,0"></Button>
             <Label Text="Listo! Presupuesto hecho y enviado" WidthRequest="300" FontSize="14" VerticalTextAlignment="Center"></Label>
         </HorizontalStackLayout>
-        <HorizontalStackLayout Margin="28,120,0,20" HeightRequest="70">
-            <Frame Padding="1.5" BorderColor="#F5811E">
-                <StackLayout>
-                    <Label FontSize="12" TextColor="Gray" HorizontalOptions="CenterAndExpand" Margin="40" Text="Proximamente"></Label>
-                    <Button x:Name="BtnCargarPrecios" Text="Cargar Precios" BackgroundColor="White" FontSize="14" FontAttributes="Bold" 
-                            WidthRequest="350"  VerticalOptions="StartAndExpand" ZIndex="0" Clicked="BtnCargarPrecios_Clicked"></Button>
-                </StackLayout>
+        <HorizontalStackLayout Margin="29,120,0,20" HeightRequest="70">
+            <Frame Padding="1.5" BorderColor="#F5811E" WidthRequest="350">
+                <VerticalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="$" TextColor="#F5811E" FontSize="20" FontAttributes="Bold" Margin="15"></Label>
+                        <Button x:Name="BtnCargarPrecios" Text="Cargar Precios" BackgroundColor="White" FontSize="14" FontAttributes="Bold" 
+                               Clicked="BtnCargarPrecios_Clicked" VerticalOptions="Start" HorizontalOptions="Start" Margin="-15,0,0,0" WidthRequest="290"></Button>
+                        <Label FontSize="12" TextColor="Gray" HorizontalOptions="CenterAndExpand" Text="Proximamente" VerticalOptions="End"
+                               Margin="-195,0,0,0"></Label>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
             </Frame>
         </HorizontalStackLayout>
-
         <HorizontalStackLayout  HorizontalOptions="Center" >
-            <Button Text="Iniciar presupuesto" Background="#F5811E" FontSize="14" FontAttributes="Bold" WidthRequest="350" HeightRequest="70"
-                Clicked="Button_Clicked"></Button>
+            <Frame Padding="0" Background="#F5811E" BorderColor="#F5811E">
+                <HorizontalStackLayout WidthRequest="350">
+                    <Image Source="check.png" Aspect="Fill" Margin="15,0,0,0" BackgroundColor="#F5811E" HeightRequest="22" WidthRequest="22"></Image>
+                    <Button Text="Iniciar presupuesto" Background="#F5811E" FontSize="14" WidthRequest="276" FontAttributes="Bold"  
+                            HeightRequest="70" Clicked="Button_Clicked"></Button>
+                </HorizontalStackLayout>
+            </Frame>
+            
         </HorizontalStackLayout>
-        
-
     </StackLayout>
 </ContentPage>
