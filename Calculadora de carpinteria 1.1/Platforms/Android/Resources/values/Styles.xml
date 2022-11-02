@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="MainTheme" parent="MainTheme.Base"></style>
+	<style name="Maui.MySplash" parent="Maui.SplashTheme">
+		<item name="android:windowBackground">@drawable/SplashMiniApp</item>
+		<!--@drawable/(Nombre de la imagen sin la extencion)-->
+	</style>
+</resources>

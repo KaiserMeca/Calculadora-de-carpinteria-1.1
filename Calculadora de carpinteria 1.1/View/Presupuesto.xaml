@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Local="clr-namespace:Calculadora_de_carpinteria_1._1"
+             x:Class="Calculadora_de_carpinteria_1._1.Presupuesto"
+             Title="Presupuesto">
+    <AbsoluteLayout x:Name="layoutPrincipal" BackgroundColor="White">
+        <HorizontalStackLayout Margin="0,65,0,20" BackgroundColor="#FFB700" WidthRequest="700" HeightRequest="40">
+            <Label Text="Abertura" FontSize="12" TextColor="Black" WidthRequest="123" HorizontalTextAlignment="Center" Padding="19,0,0,0"
+                   VerticalTextAlignment="Center"></Label>
+            <Label Text="Medida" FontSize="12" TextColor="Black" WidthRequest="100" HorizontalTextAlignment="Center" Margin="19,0,0,0"
+                   VerticalTextAlignment="Center" ></Label>
+            <Label Text="Cant" FontSize="12" TextColor="Black" WidthRequest="35" HorizontalTextAlignment="Center" Margin="-6,0,0,0"
+                   VerticalTextAlignment="Center"></Label>
+            <Label Text="$ Unit" FontSize="12" TextColor="Black" WidthRequest="65" HorizontalTextAlignment="Center" Margin="0,0,0,0"
+                   VerticalTextAlignment="Center"></Label>
+            <Label Text="$ Total" FontSize="12" TextColor="Black" WidthRequest="70" HorizontalTextAlignment="Center" Margin="4,0,0,0"
+                   VerticalTextAlignment="Center"></Label>
+        </HorizontalStackLayout>
+            <Button x:Name="BtnNuevaAbertura" Text="Agregar abertura" FontSize="13" CornerRadius="10" Margin="20,690,0,0"
+                BackgroundColor="#FFB700" FontAttributes="Bold" Clicked="BtnNuevaAbertura_Clicked" HeightRequest="45" Padding="20,0,20,0"></Button>
+            <Button x:Name="BtnFinalizarPresu" Text="Finalizar presupuesto" FontSize="13" CornerRadius="10" 
+                BackgroundColor="#FFB700" FontAttributes="Bold" Clicked="BtnFinalizarPresu_Clicked" HeightRequest="45" Padding="5,10,5,10"
+                    Margin="215,690,0,0"></Button>
+        
+    </AbsoluteLayout>
+</ContentPage>
+<!--<Entry TextColor="Black" Text="{Binding Linea}" Margin="5"></Entry>
+        <Entry TextColor="Black" Text="{Binding Tipo}" Margin="5"></Entry>
+        <Entry TextColor="Black" Text="{Binding Ancho}" Margin="5"></Entry>
+        <Entry TextColor="Black" Text="{Binding Alto}" Margin="5"></Entry>
+        <Entry TextColor="Black" Text="{Binding Cantidad}" Margin="5"></Entry>
+        <Entry TextColor="Black" Text="{Binding PrecioUnitario}" Margin="5"></Entry>
+        <Entry TextColor="Black" Text="{Binding PrecioFinal}" Margin="5"></Entry>
+
+        <Button Text="+" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" Margin="100,200,0,100" BackgroundColor="#F5811E"
+                FontAttributes="Bold" FontSize="18"></Button>-->

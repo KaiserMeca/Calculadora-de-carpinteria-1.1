@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculadora_de_carpinteria_1._1.CargarAberturas"
+             Title="CargarAberturas" BarBackgroundColor="#F5811F">
+    <!--#region Modena-->
+    <ContentPage x:Name="ModenaPage" Title="Modena" BackgroundColor="#dcdcdc" IconImageSource="window.png">
+        <ScrollView>
+            <!--#region Grid-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition Height="45"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition Height="45"></RowDefinition>
+
+                    <RowDefinition Height="17"></RowDefinition>
+                    <RowDefinition Height="0,5"></RowDefinition>
+                    <RowDefinition Height="17"></RowDefinition>
+
+                    <RowDefinition Height="45"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition Height="45"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition Height="45"></RowDefinition>
+
+                    <RowDefinition Height="17"></RowDefinition>
+                    <RowDefinition Height="1"></RowDefinition>
+                    <RowDefinition Height="17"></RowDefinition>
+
+                    <RowDefinition Height="45"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition Height="45"></RowDefinition>
+
+                    <RowDefinition Height="17"></RowDefinition>
+                    <RowDefinition Height="1"></RowDefinition>
+                    <RowDefinition Height="17"></RowDefinition>
+
+                    <RowDefinition Height="45"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition Height="45"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="45"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="157"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="2"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <!--#endregion-->
+                <!--#region Abertura-->
+                <Image Source="window.png" Grid.Column="1" Grid.Row="1" Aspect="Fill" VerticalOptions="Center" HorizontalOptions="End"></Image>
+                <Label Grid.Column="2" Grid.Row="1" Text="Abertura" VerticalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" 
+               HorizontalOptions="Center" HorizontalTextAlignment="Center">
+                </Label>
+                <Frame Grid.Column="3" Grid.Row="1" Padding="0" WidthRequest="180">
+                    <Picker Grid.Column="2" Grid.Row="1" x:Name="pickerAberturaSeleccionada" Title="Selecione" BackgroundColor="Transparent" 
+                        FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" 
+                        Focused="pickerAberturaSeleccionada_Focused" TitleColor="#bababa" >
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Ventana corrediza</x:String>
+                                <x:String>Puerta balcón</x:String>
+                                <x:String>Desplazable</x:String>
+                                <x:String>Banderola</x:String>
+                                <x:String>Ventana de abrir</x:String>
+                                <x:String>Puerta de abrir</x:String>
+                                <x:String>Puerta de abrir de 2 hojas</x:String>
+                                <x:String>Paño fijo</x:String>
+                                <x:String>Guía triple</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Frame>
+
+                <Image Source="arrow.png" Grid.Column="1" Grid.Row="3" ></Image>
+                <Label BackgroundColor="Transparent" Grid.Column="2" Grid.Row="3" Text="Ancho" TextColor="Black" FontSize="16" FontAttributes="Bold" 
+                   HorizontalOptions="CenterAndExpand" Padding="9"
+                   HorizontalTextAlignment="Center"></Label>
+                <Frame Grid.Column="3" Grid.Row="3" HasShadow="True" WidthRequest="180" Padding="0">
+                    <HorizontalStackLayout HeightRequest="41">
+                        <Label Text="mm" TextColor="Gray" FontSize="12" FontAttributes="Bold" 
+                           BackgroundColor="Transparent" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" 
+                   WidthRequest="29" Margin="5,1,0,0"></Label>
+                        <Entry x:Name="anchoIn" TextColor="Black" VerticalTextAlignment="End" FontSize="15" 
+                       HeightRequest="41" WidthRequest="120" HorizontalTextAlignment="Center" Keyboard="Telephone" FontAttributes="Bold"
+                           Focused="pickerAberturaSeleccionada_Focused"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Image Source="resize.png" Grid.Column="1" Grid.Row="5" ></Image>
+                <Label Grid.Column="2" Grid.Row="5" Text="Alto"  BackgroundColor="Transparent" TextColor="Black" FontAttributes="Bold" 
+                   HorizontalOptions="CenterAndExpand" Padding="9"
+                   HorizontalTextAlignment="Center"></Label>
+
+                <Frame Grid.Column="3" Grid.Row="5" HasShadow="True" WidthRequest="180" Padding="0">
+                    <HorizontalStackLayout HeightRequest="41">
+                        <Label Text="mm" TextColor="Gray" FontSize="12" FontAttributes="Bold" 
+                           BackgroundColor="Transparent" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" 
+                   WidthRequest="29" Margin="5,1,0,0"></Label>
+                        <Entry x:Name="altoIn" TextColor="Black" VerticalTextAlignment="End" FontSize="15" 
+                       HeightRequest="41" WidthRequest="120" HorizontalTextAlignment="Center" Keyboard="Telephone" FontAttributes="Bold"
+                           Focused="pickerAberturaSeleccionada_Focused"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+                <!--#endregion-->
+                <Line Aspect="Fill" BackgroundColor="LightGray" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="7" HeightRequest="3" WidthRequest="300"></Line>
+                <!--#region Precios-->
+                <Image Source="mas.png" Grid.Column="1" Grid.Row="9"></Image>
+                <Label Grid.Column="2" Grid.Row="9" Text="Aluminio"  BackgroundColor="Transparent" FontAttributes="Bold" 
+                   HorizontalOptions="CenterAndExpand" Padding="9" HorizontalTextAlignment="Center"></Label>
+                <Frame Grid.Column="3" Grid.Row="9" HasShadow="True" CornerRadius="10" WidthRequest="180" Padding="0">
+                    <HorizontalStackLayout HeightRequest="41">
+                        <Label Text="$" FontSize="18" FontAttributes="Bold" TextColor="Gray"
+                           BackgroundColor="Transparent" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" 
+                   WidthRequest="20" Margin="5,8,0,0"></Label>
+                        <Entry x:Name="PrecioAluminioIn" Background="white" TextColor="Black" VerticalTextAlignment="End" FontSize="15" 
+                       HeightRequest="41" WidthRequest="120" HorizontalTextAlignment="Center" Keyboard="Telephone" FontAttributes="Bold"
+                           Focused="pickerAberturaSeleccionada_Focused"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Image Source="espejo.png" Grid.Column="1" Grid.Row="11" ></Image>
+                <Label Grid.Column="2" Grid.Row="11" Text="Vidrio"  BackgroundColor="Transparent" FontAttributes="Bold" 
+                   HorizontalOptions="CenterAndExpand" Padding="9"
+                   HorizontalTextAlignment="Center"></Label>
+                <Frame Grid.Column="3" Grid.Row="11" HasShadow="True" WidthRequest="180" Padding="0">
+                    <HorizontalStackLayout HeightRequest="41">
+                        <Label Text="$" FontSize="18" FontAttributes="Bold" TextColor="Gray"
+                           BackgroundColor="Transparent" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" 
+                   WidthRequest="20" Margin="5,8,0,0"></Label>
+                        <Entry x:Name="PrecioVidrioIn" Background="white" TextColor="Black" VerticalTextAlignment="End" FontSize="15" 
+                       HeightRequest="41" WidthRequest="120" HorizontalTextAlignment="Center" Keyboard="Telephone" FontAttributes="Bold"
+                           Focused="pickerAberturaSeleccionada_Focused"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Image Source="ferreteria.png" Grid.Column="1" Grid.Row="13" ></Image>
+                <Label Grid.Column="2" Grid.Row="13" Text="Accesorios" BackgroundColor="Transparent" FontAttributes="Bold" 
+                   HorizontalOptions="CenterAndExpand" Padding="9"
+                   HorizontalTextAlignment="Center"></Label>
+                <Frame Grid.Column="3" Grid.Row="13" HasShadow="True" WidthRequest="180" Padding="0" >
+                    <HorizontalStackLayout HeightRequest="41" Background="transparent">
+                        <Label Text="$" FontSize="18" FontAttributes="Bold" TextColor="Gray"
+                           BackgroundColor="Transparent" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" 
+                   WidthRequest="20" Margin="5,8,0,0"></Label>
+                        <Entry x:Name="PrecioAccesoriosIn" Background="white" TextColor="Black" VerticalTextAlignment="End" FontSize="15" 
+                       HeightRequest="41" WidthRequest="120" HorizontalTextAlignment="Center" Keyboard="Telephone" FontAttributes="Bold"
+                           Focused="pickerAberturaSeleccionada_Focused"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+                <!--#endregion-->
+                <Line Aspect="Fill" BackgroundColor="LightGray" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="15" HeightRequest="3" WidthRequest="300"></Line>
+                <!--#region Cant/Porcentaje-->
+                <Label Grid.Column="2" Grid.Row="17" Text="Cantidad"  BackgroundColor="Transparent" FontAttributes="Bold" 
+                   HorizontalOptions="CenterAndExpand" Padding="9" HorizontalTextAlignment="Center"></Label>
+
+                <Frame Grid.Column="3" Grid.Row="17" Padding="0" WidthRequest="100">
+                    <Picker Grid.Column="2" Grid.Row="1" x:Name="pickerCantidadSeleccionada" BackgroundColor="Transparent" 
+                        FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalOptions="Center">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:Int32}">
+                                <x:Int32>1</x:Int32>
+                                <x:Int32>2</x:Int32>
+                                <x:Int32>3</x:Int32>
+                                <x:Int32>4</x:Int32>
+                                <x:Int32>5</x:Int32>
+                                <x:Int32>6</x:Int32>
+                                <x:Int32>7</x:Int32>
+                                <x:Int32>8</x:Int32>
+                                <x:Int32>9</x:Int32>
+                                <x:Int32>10</x:Int32>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Frame>
+
+                <Label Grid.Column="2" Grid.Row="19" Text="Porcentaje" BackgroundColor="Transparent" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"
+                    Padding="9" HorizontalTextAlignment="Center"></Label>
+                <Label Grid.Column="3" Grid.Row="19" Text="%" FontSize="18" FontAttributes="Bold" TextColor="Gray"
+                           BackgroundColor="Transparent" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" 
+                   WidthRequest="20" Margin="35,8,0,0"></Label>
+                <Frame Grid.Column="3" Grid.Row="19" Padding="0" WidthRequest="100">
+                    <Picker Grid.Column="3" Grid.Row="19" x:Name="pickerPorcentajeSeleccionado" BackgroundColor="Transparent" 
+                        FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalOptions="Center">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:Int32}">
+                                <x:Int32>40</x:Int32>
+                                <x:Int32>50</x:Int32>
+                                <x:Int32>60</x:Int32>
+                                <x:Int32>70</x:Int32>
+                                <x:Int32>80</x:Int32>
+                                <x:Int32>90</x:Int32>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Frame>
+
+                <!--#endregion-->
+                <Line Aspect="Fill" BackgroundColor="LightGray" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="21" HeightRequest="3" WidthRequest="300"></Line>
+                <!--#region Contra-Pre-->
+
+                <Label Grid.Column="2" Grid.Row="23" Text="Contramarco" BackgroundColor="Transparent" FontAttributes="Bold"
+                   HorizontalOptions="Center" Padding="9"  HorizontalTextAlignment="Center"></Label>
+                <Switch x:Name="SwitchContramaco" Grid.Column="3" Grid.Row="23" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent"
+                    OnColor="#F5811E" ThumbColor="#F5811E" IsToggled="True"></Switch>
+
+
+                <Label Grid.Column="2" Grid.Row="25" Text="Premarco" BackgroundColor="Transparent" FontAttributes="Bold"
+                   HorizontalOptions="Center" Padding="9" HorizontalTextAlignment="Center"></Label>
+                <Switch x:Name="SwitchPremarco" Grid.Column="3" Grid.Row="25" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent"
+                    OnColor="#F5811E" ThumbColor="#F5811E" IsToggled="True"></Switch>
+
+                <Button x:Name="BtnAgregarAbertura" Clicked="BtnAgregarAbertura_Clicked" Text="Agregar" Grid.Column="1" Grid.Row="27"
+                    Grid.ColumnSpan="4" WidthRequest="360" BackgroundColor="#F5811F" TextColor="Black" FontSize="16" FontAttributes="Bold" 
+                    Padding="1"></Button>
+            </Grid>
+            <!--#endregion-->
+        </ScrollView>
+    </ContentPage>
+    <!--#endregion-->
+    <!--#region A30-->
+    <ContentPage x:Name="A30Page" Title="A30" BackgroundColor="#b5bac9" IconImageSource="window.png">
+        <ScrollView>
+            <!--#region Grid-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition Height="45"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition Height="45"></RowDefinition>
+
+                    <RowDefinition Height="17"></RowDefinition>
+                    <RowDefinition Height="0,5"></RowDefinition>
+                    <RowDefinition Height="17"></RowDefinition>
+
+                    <RowDefinition Height="45"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition Height="45"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition Height="45"></RowDefinition>
+
+                    <RowDefinition Height="17"></RowDefinition>
+                    <RowDefinition Height="1"></RowDefinition>
+                    <RowDefinition Height="17"></RowDefinition>
+
+                    <RowDefinition Height="45"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition Height="45"></RowDefinition>
+
+                    <RowDefinition Height="17"></RowDefinition>
+                    <RowDefinition Height="1"></RowDefinition>
+                    <RowDefinition Height="17"></RowDefinition>
+
+                    <RowDefinition Height="45"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition Height="45"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="45"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="157"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="2"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <!--#endregion-->
+                <!--#region Abertura-->
+                <Image Source="window.png" Grid.Column="1" Grid.Row="1" Aspect="Fill" VerticalOptions="Center" HorizontalOptions="End"></Image>
+                <Label Grid.Column="2" Grid.Row="1" Text="Abertura" VerticalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" 
+               HorizontalOptions="Center" HorizontalTextAlignment="Center">
+                </Label>
+                <Frame Grid.Column="3" Grid.Row="1" Padding="0" WidthRequest="180">
+                    <Picker Grid.Column="2" Grid.Row="1" x:Name="pickerAberturaSeleccionadaA30" Title="Selecione" BackgroundColor="Transparent" 
+                        FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" 
+                        Focused="pickerAberturaSeleccionada_Focused" TitleColor="#bababa" >
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Ventana corrediza</x:String>
+                                <x:String>Corrediza balcon</x:String>
+                                <x:String>Dezplazable</x:String>
+                                <x:String>Banderola</x:String>
+                                <x:String>Ventana de abrir</x:String>
+                                <x:String>Puerta de abrir simple</x:String>
+                                <x:String>Puerta de abrir doble</x:String>
+                                <x:String>Paño fijo</x:String>
+                                <x:String>Guia triple</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Frame>
+
+                <Image Source="arrow.png" Grid.Column="1" Grid.Row="3" ></Image>
+                <Label BackgroundColor="Transparent" Grid.Column="2" Grid.Row="3" Text="Ancho" TextColor="Black" FontSize="16" FontAttributes="Bold" 
+                   HorizontalOptions="CenterAndExpand" Padding="9"
+                   HorizontalTextAlignment="Center"></Label>
+                <Frame Grid.Column="3" Grid.Row="3" HasShadow="True" WidthRequest="180" Padding="0">
+                    <HorizontalStackLayout HeightRequest="41">
+                        <Label Text="mm" TextColor="Gray" FontSize="12" FontAttributes="Bold" 
+                           BackgroundColor="Transparent" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" 
+                   WidthRequest="29" Margin="5,1,0,0"></Label>
+                        <Entry x:Name="anchoInA30" TextColor="Black" VerticalTextAlignment="End" FontSize="15" 
+                       HeightRequest="41" WidthRequest="120" HorizontalTextAlignment="Center" Keyboard="Telephone" FontAttributes="Bold"
+                           Focused="pickerAberturaSeleccionada_Focused"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Image Source="resize.png" Grid.Column="1" Grid.Row="5" ></Image>
+                <Label Grid.Column="2" Grid.Row="5" Text="Alto"  BackgroundColor="Transparent" TextColor="Black" FontAttributes="Bold" 
+                   HorizontalOptions="CenterAndExpand" Padding="9"
+                   HorizontalTextAlignment="Center"></Label>
+
+                <Frame Grid.Column="3" Grid.Row="5" HasShadow="True" WidthRequest="180" Padding="0">
+                    <HorizontalStackLayout HeightRequest="41">
+                        <Label Text="mm" TextColor="Gray" FontSize="12" FontAttributes="Bold" 
+                           BackgroundColor="Transparent" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" 
+                   WidthRequest="29" Margin="5,1,0,0"></Label>
+                        <Entry x:Name="altoInA30" TextColor="Black" VerticalTextAlignment="End" FontSize="15" 
+                       HeightRequest="41" WidthRequest="120" HorizontalTextAlignment="Center" Keyboard="Telephone" FontAttributes="Bold"
+                           Focused="pickerAberturaSeleccionada_Focused"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+                <!--#endregion-->
+                <Line Aspect="Fill" BackgroundColor="LightGray" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="7" HeightRequest="3" WidthRequest="300"></Line>
+                <!--#region Precios-->
+                <Image Source="mas.png" Grid.Column="1" Grid.Row="9"></Image>
+                <Label Grid.Column="2" Grid.Row="9" Text="Aluminio"  BackgroundColor="Transparent" FontAttributes="Bold" 
+                   HorizontalOptions="CenterAndExpand" Padding="9" HorizontalTextAlignment="Center"></Label>
+                <Frame Grid.Column="3" Grid.Row="9" HasShadow="True" CornerRadius="10" WidthRequest="180" Padding="0">
+                    <HorizontalStackLayout HeightRequest="41">
+                        <Label Text="$" FontSize="18" FontAttributes="Bold" TextColor="Gray"
+                           BackgroundColor="Transparent" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" 
+                   WidthRequest="20" Margin="5,8,0,0"></Label>
+                        <Entry x:Name="PrecioAluminioInA30" Background="white" TextColor="Black" VerticalTextAlignment="End" FontSize="15" 
+                       HeightRequest="41" WidthRequest="120" HorizontalTextAlignment="Center" Keyboard="Telephone" FontAttributes="Bold"
+                           Focused="pickerAberturaSeleccionada_Focused"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Image Source="espejo.png" Grid.Column="1" Grid.Row="11" ></Image>
+                <Label Grid.Column="2" Grid.Row="11" Text="Vidrio"  BackgroundColor="Transparent" FontAttributes="Bold" 
+                   HorizontalOptions="CenterAndExpand" Padding="9"
+                   HorizontalTextAlignment="Center"></Label>
+                <Frame Grid.Column="3" Grid.Row="11" HasShadow="True" WidthRequest="180" Padding="0">
+                    <HorizontalStackLayout HeightRequest="41">
+                        <Label Text="$" FontSize="18" FontAttributes="Bold" TextColor="Gray"
+                           BackgroundColor="Transparent" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" 
+                   WidthRequest="20" Margin="5,8,0,0"></Label>
+                        <Entry x:Name="PrecioVidrioInA30" Background="white" TextColor="Black" VerticalTextAlignment="End" FontSize="15" 
+                       HeightRequest="41" WidthRequest="120" HorizontalTextAlignment="Center" Keyboard="Telephone" FontAttributes="Bold"
+                           Focused="pickerAberturaSeleccionada_Focused"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Image Source="ferreteria.png" Grid.Column="1" Grid.Row="13" ></Image>
+                <Label Grid.Column="2" Grid.Row="13" Text="Accesorios" BackgroundColor="Transparent" FontAttributes="Bold" 
+                   HorizontalOptions="CenterAndExpand" Padding="9"
+                   HorizontalTextAlignment="Center"></Label>
+                <Frame Grid.Column="3" Grid.Row="13" HasShadow="True" WidthRequest="180" Padding="0" >
+                    <HorizontalStackLayout HeightRequest="41" Background="transparent">
+                        <Label Text="$" FontSize="18" FontAttributes="Bold" TextColor="Gray"
+                           BackgroundColor="Transparent" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" 
+                   WidthRequest="20" Margin="5,8,0,0"></Label>
+                        <Entry x:Name="PrecioAccesoriosInA30" Background="white" TextColor="Black" VerticalTextAlignment="End" FontSize="15" 
+                       HeightRequest="41" WidthRequest="120" HorizontalTextAlignment="Center" Keyboard="Telephone" FontAttributes="Bold"
+                           Focused="pickerAberturaSeleccionada_Focused"></Entry>
+                    </HorizontalStackLayout>
+                </Frame>
+                <!--#endregion-->
+                <Line Aspect="Fill" BackgroundColor="LightGray" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="15" HeightRequest="3" WidthRequest="300"></Line>
+                <!--#region Cant/Porcentaje-->
+                <Label Grid.Column="2" Grid.Row="17" Text="Cantidad"  BackgroundColor="Transparent" FontAttributes="Bold" 
+                   HorizontalOptions="CenterAndExpand" Padding="9" HorizontalTextAlignment="Center"></Label>
+
+                <Frame Grid.Column="3" Grid.Row="17" Padding="0" WidthRequest="100">
+                    <Picker Grid.Column="2" Grid.Row="1" x:Name="pickerCantidadSeleccionadaA30" BackgroundColor="Transparent" 
+                        FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalOptions="Center">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:Int32}">
+                                <x:Int32>1</x:Int32>
+                                <x:Int32>2</x:Int32>
+                                <x:Int32>3</x:Int32>
+                                <x:Int32>4</x:Int32>
+                                <x:Int32>5</x:Int32>
+                                <x:Int32>6</x:Int32>
+                                <x:Int32>7</x:Int32>
+                                <x:Int32>8</x:Int32>
+                                <x:Int32>9</x:Int32>
+                                <x:Int32>10</x:Int32>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Frame>
+
+                <Label Grid.Column="2" Grid.Row="19" Text="Porcentaje" BackgroundColor="Transparent" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"
+                    Padding="9" HorizontalTextAlignment="Center"></Label>
+                <Label Grid.Column="3" Grid.Row="19" Text="%" FontSize="18" FontAttributes="Bold" TextColor="Gray"
+                           BackgroundColor="Transparent" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" 
+                   WidthRequest="20" Margin="35,8,0,0"></Label>
+                <Frame Grid.Column="3" Grid.Row="19" Padding="0" WidthRequest="100">
+                    <Picker Grid.Column="3" Grid.Row="19" x:Name="pickerPorcentajeSeleccionadoA30" BackgroundColor="Transparent" 
+                        FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalOptions="Center">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:Int32}">
+                                <x:Int32>40</x:Int32>
+                                <x:Int32>50</x:Int32>
+                                <x:Int32>60</x:Int32>
+                                <x:Int32>70</x:Int32>
+                                <x:Int32>80</x:Int32>
+                                <x:Int32>90</x:Int32>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Frame>
+
+                <!--#endregion-->
+                <Line Aspect="Fill" BackgroundColor="LightGray" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="21" HeightRequest="3" WidthRequest="300"></Line>
+                <!--#region Contra-Pre-->
+
+                <Label Grid.Column="2" Grid.Row="23" Text="Contramarco" BackgroundColor="Transparent" FontAttributes="Bold"
+                   HorizontalOptions="Center" Padding="9"  HorizontalTextAlignment="Center"></Label>
+                <Switch x:Name="SwitchContramacoA30" Grid.Column="3" Grid.Row="23" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent"
+                    OnColor="#F5811E" ThumbColor="#F5811E" IsToggled="True"></Switch>
+
+
+                <Label Grid.Column="2" Grid.Row="25" Text="Premarco" BackgroundColor="Transparent" FontAttributes="Bold"
+                   HorizontalOptions="Center" Padding="9" HorizontalTextAlignment="Center"></Label>
+                <Switch x:Name="SwitchPremarcoA30" Grid.Column="3" Grid.Row="25" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent"
+                    OnColor="#F5811E" ThumbColor="#F5811E" IsToggled="True"></Switch>
+
+                <Button x:Name="BtnAgregarAberturaA30" Text="Agregar" Grid.Column="1" Grid.Row="27"
+                    Grid.ColumnSpan="4" WidthRequest="360" BackgroundColor="#F5811F" TextColor="Black" FontSize="16" FontAttributes="Bold" 
+                    Padding="1"></Button>
+            </Grid>
+            <!--#endregion-->
+        </ScrollView>
+    </ContentPage>
+    <!--#endregion-->
+</TabbedPage>
+    

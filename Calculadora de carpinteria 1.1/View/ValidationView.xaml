@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculadora_de_carpinteria_1._1.View.ValidationView"
+             Title="Acceso" x:Name="PrincipalPage">
+    <StackLayout BackgroundColor="White">
+        <StackLayout>
+            <Label Text="Bienvenido" TextColor="Black" Margin="30" BackgroundColor="Transparent" FontAttributes="Bold" FontSize="20"></Label>
+            <Frame WidthRequest="350" Padding="0" CornerRadius="15" Margin="0,0,0,30">
+                <StackLayout>
+                    <Label Text="1. Generá la clave temporal y enviásela al desarrolador" BackgroundColor="Transparent" Margin="10,10,0,15"></Label>
+                    <Entry x:Name="lblMostrarCodigo" BackgroundColor="White" Scale="2" Margin="0,15,0,20"
+                   TextColor="Black" HorizontalOptions="Center" FontAttributes="Bold"></Entry>
+                    <Button x:Name="GenerarClave" Text="Generar clave" Clicked="GenerarClave_Clicked" Margin="0,0,0,20" WidthRequest="150"></Button>
+                </StackLayout>
+            </Frame>
+            <Frame Padding="0" HasShadow="True" WidthRequest="350" Margin="0,0,0,30" CornerRadius="15">
+                <StackLayout>
+                    <Label Text="2.Ingresá el código que te compartio el desarrollador" Margin="10,10,0,15"></Label>
+                    <Frame Padding="0" Margin="0,30,0,30" WidthRequest="150">
+                        <Entry x:Name="entryClave" WidthRequest="150" BackgroundColor="LightGray" TextColor="Black" FontSize="19" 
+                   VerticalOptions="Center" FontAttributes="Bold"
+                   HorizontalOptions="Center"></Entry>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+            <Button x:Name="Entrar" Margin="0,20,0,20" FontSize="18" WidthRequest="150" FontAttributes="Bold" Text="Entrar" VerticalOptions="Center"
+                    HorizontalOptions="Center" Clicked="Entrar_Clicked">
+                <Button.Shadow>
+                    <Shadow 
+                            Opacity="80"
+                            Radius="80"></Shadow>
+                </Button.Shadow>
+            </Button>
+            <Button Text="Borrar" x:Name="BorrarClick" Clicked="BorrarClick_Clicked" BackgroundColor="Transparent"></Button>
+        </StackLayout>
+    </StackLayout>
+</ContentPage> 
+
+<!--<VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+    <Label x:Name="ClaveDeSalida"></Label>
+    <Entry x:Name="entryClave" BackgroundColor="LightGray"></Entry>
+</VerticalStackLayout>-->
