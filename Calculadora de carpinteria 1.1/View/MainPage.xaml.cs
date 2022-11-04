@@ -7,7 +7,7 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
-        Line();
+        //Line();
     }
 
     private void Button_Clicked(object sender, EventArgs e)
@@ -19,30 +19,30 @@ public partial class MainPage : ContentPage
     {
         DisplayAlert("Proximamente","Pronto vas a poder guardar los precios del aluminio y de los vidrios!","Genial!");
     }
-    public void Line()
-    {
-        int count = 0;
-        double coun2 = 0;
-        var dispatcher = Application.Current.Dispatcher; 
-        var timer = dispatcher.CreateTimer();
-        timer.Interval = TimeSpan.FromMilliseconds(1);
-        timer.Tick += (s, e) =>
-        {
-            count += 1;
-            Linea1.Rotation = count;
-            Linea2.Rotation = count;
-            Linea3.Rotation = count;
-            if (count == 90)
-            {
-                timer.Stop();
-            }
-            coun2 += 3.66;
-            Linea1.Margin = new Thickness(0,0,coun2,0);
-            Linea2.Margin = new Thickness(0, 0, coun2, 0);
-            Linea3.Margin = new Thickness(0, 0, coun2, 0);
+    //public void Line()
+    //{
+    //    int count = 0;
+    //    double coun2 = 0;
+    //    var dispatcher = Application.Current.Dispatcher; 
+    //    var timer = dispatcher.CreateTimer();
+    //    timer.Interval = TimeSpan.FromMilliseconds(1);
+    //    timer.Tick += (s, e) =>
+    //    {
+    //        count += 5;
+    //        Linea1.Rotation = count;
+    //        Linea2.Rotation = count;
+    //        Linea3.Rotation = count;
+    //        if (count == 90)
+    //        {
+    //            timer.Stop();
+    //        }
+    //        coun2 += 18.3;
+    //        Linea1.Margin = new Thickness(0,0,coun2,0);
+    //        Linea2.Margin = new Thickness(0, 0, coun2, 0);
+    //        Linea3.Margin = new Thickness(0, 0, coun2, 0);
 
-        };
-        timer.Start();
-    }
+    //    };
+    //    timer.Start();
+    //}
 }
 

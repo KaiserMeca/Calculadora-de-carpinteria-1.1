@@ -64,7 +64,7 @@ public partial class ValidationView : ContentPage
             claveRecuperada = await SecureStorageServiceIn.Recuperar(key);
             if (claveRecuperada != null)
             {
-                Navigation.PushAsync(new MainPage());
+                await Navigation.PushAsync(new MainPage());
             }
         }
     }

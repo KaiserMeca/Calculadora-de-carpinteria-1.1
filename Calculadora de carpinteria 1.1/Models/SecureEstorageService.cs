@@ -17,9 +17,14 @@ namespace Calculadora_de_carpinteria_1._1.Models
         {
             return await SecureStorage.Default.GetAsync(key);
         }
-        public async Task BorrarClave(string key)
+        public void BorrarClaveMetodo(string key)
         {
-            SecureStorage.Default.Remove(key);
+            bool d = SecureStorage.Default.Remove(key);
+        }
+
+        Task ISecureStorageService.BorrarClave(string key)
+        {
+            throw new NotImplementedException();
         }
     }
 }

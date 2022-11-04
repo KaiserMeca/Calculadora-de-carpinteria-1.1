@@ -201,6 +201,21 @@ namespace Calculadora_de_carpinteria_1._1.Models
                 Codigo = "AMIGO",
                 Clave = "HXHOP"
             });
+            listaDeClaves.Add(new ObjectListKeyToken
+            {
+                Codigo = "TIRAMISU",
+                Clave = "SLKNV"
+            });
+            listaDeClaves.Add(new ObjectListKeyToken
+            {
+                Codigo = "HELADO",
+                Clave = "LORTV"
+            });
+            listaDeClaves.Add(new ObjectListKeyToken
+            {
+                Codigo = "CAMISA",
+                Clave = "KOLFD"
+            });
             #endregion
         }
 
