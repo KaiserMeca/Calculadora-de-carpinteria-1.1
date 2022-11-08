@@ -38,6 +38,10 @@
         public int Porcentaje { get => _porcentaje; set => _porcentaje = value; }
         public int PrecioUnitario { get => _precioUnitario; set => _precioUnitario = value; }
         public int PrecioFinal { get => _precioFinal; set => _precioFinal = value; }
+        public string Medidas
+        {
+            get { return string.Format("{0}x{1}", Ancho, Alto); }
+        }
 
     }
 }

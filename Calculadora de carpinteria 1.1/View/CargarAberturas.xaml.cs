@@ -16,24 +16,22 @@ public partial class CargarAberturas : TabbedPage
     string IsLinea;
     private Modena modena = new Modena();
 
-
     private void BtnAgregarAbertura_Clicked(object sender, EventArgs e)
     {
-        llenarCampos();
+        //llenarCampos();
         ValidarCampos();
         if (ModenaPage.IsLoaded == true && camposValidados == true)
         {
-            IsLinea = "Modena";
+            IsLinea = "Mod";
             object tipo = pickerAberturaSeleccionada.SelectedItem;
             object cant = pickerCantidadSeleccionada.SelectedItem;
             object porcentaje = pickerPorcentajeSeleccionado.SelectedItem;
 
-            modena.modena(IsLinea, Convert.ToString(tipo), Convert.ToDouble(anchoIn.Text), Convert.ToDouble(altoIn.Text),
+            modena.Ventanamodena(IsLinea, Convert.ToString(tipo), Convert.ToDouble(anchoIn.Text), Convert.ToDouble(altoIn.Text),
             Convert.ToDouble(PrecioAluminioIn.Text), Convert.ToDouble(PrecioVidrioIn.Text), Convert.ToDouble(PrecioAccesoriosIn.Text),
             SwitchContramaco.IsToggled, SwitchPremarco.IsToggled, Convert.ToInt32(cant), Convert.ToInt32(porcentaje));
 
             Navigation.PushAsync(new Presupuesto(modena.aberturaActual));
-            //Navigation.PushAsync(new PresupuestoView(modena.aberturaActual));
 
             deleteLabels();
         }
@@ -42,8 +40,6 @@ public partial class CargarAberturas : TabbedPage
             IsLinea = "A30";
             object tipo = pickerAberturaSeleccionadaA30.SelectedItem;
             Navigation.PushAsync(new Presupuesto(null));
-            //Navigation.PushAsync(new PresupuestoView(modena.aberturaActual));
-
         }
     }
     private void deleteLabels()
@@ -135,6 +131,7 @@ public partial class CargarAberturas : TabbedPage
             x.PlaceholderColor = Colors.Transparent;
         }
     }
+
     public void llenarCampos()
     {
         pickerAberturaSeleccionada.SelectedItem = "Puerta de abrir 2 hojas";
@@ -147,4 +144,7 @@ public partial class CargarAberturas : TabbedPage
 
 
     }
+
+
+
 }

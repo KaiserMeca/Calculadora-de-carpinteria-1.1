@@ -4,37 +4,103 @@
              xmlns:Local="clr-namespace:Calculadora_de_carpinteria_1._1"
              x:Class="Calculadora_de_carpinteria_1._1.Presupuesto"
              Title="Presupuesto">
-    <AbsoluteLayout x:Name="layoutPrincipal" BackgroundColor="#E0E0E0">
-        <HorizontalStackLayout>
-            <!--<Label Text="Cliente:" Margin="15,20,0,0" FontSize="13" FontAttributes="Bold"></Label>-->
-            <Entry  Placeholder="Nombre del cliente" FontSize="12" Margin="15,10,0,0" FontAttributes="Bold"></Entry>
-            <Entry  Placeholder="Nombre de la empresa" FontSize="12" Margin="80,10,0,0" FontAttributes="Bold"></Entry>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout>
-            <Label Text="Fecha:" Margin="15,50,0,0" FontSize="13" FontAttributes="Bold"></Label>
-            <Entry x:Name="entryFecha" WidthRequest="75" FontSize="12" Margin="5,40,0,0"></Entry>
-            <Entry Placeholder="Telefono" FontSize="12" Margin="90,40,0,0" FontAttributes="Bold"></Entry>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout Margin="0,100,0,20" BackgroundColor="#FFB700" WidthRequest="700" HeightRequest="40">
-            <Label Text="Abertura" FontSize="12" TextColor="Black" WidthRequest="123" HorizontalTextAlignment="Center" Padding="19,0,0,0"
-                   VerticalTextAlignment="Center" FontAttributes="Bold"></Label>
-            <Label Text="Medida" FontSize="12" TextColor="Black" WidthRequest="100" HorizontalTextAlignment="Center" Margin="19,0,0,0"
-                   VerticalTextAlignment="Center" FontAttributes="Bold"></Label>
-            <Label Text="Cant" FontSize="12" TextColor="Black" WidthRequest="35" HorizontalTextAlignment="Center" Margin="-6,0,0,0"
-                   VerticalTextAlignment="Center" FontAttributes="Bold"></Label>
-            <Label Text="$ Unit" FontSize="12" TextColor="Black" WidthRequest="65" HorizontalTextAlignment="Center" Margin="0,0,0,0"
-                   VerticalTextAlignment="Center" FontAttributes="Bold"></Label>
-            <Label Text="$ Total" FontSize="12" TextColor="Black" WidthRequest="70" HorizontalTextAlignment="Center" Margin="4,0,0,0"
-                   VerticalTextAlignment="Center" FontAttributes="Bold"></Label>
-        </HorizontalStackLayout>
-            <Button x:Name="BtnNuevaAbertura" Text="Agregar abertura" FontSize="13" CornerRadius="10" Margin="20,690,0,0"
-                BackgroundColor="#FFB700" FontAttributes="Bold" Clicked="BtnNuevaAbertura_Clicked" HeightRequest="45" Padding="20,0,20,0"></Button>
+    <Grid Padding="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="1.2*" />
+            <ColumnDefinition Width="0.2*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="15"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <HorizontalStackLayout Grid.Column="0" Grid.Row="0">
+                <Label Text="Cliente:" FontSize="11" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                <Entry  Placeholder="Nombre" FontSize="11" VerticalOptions="Center" Margin="5,0,0,0"></Entry>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Grid.Column="0" Grid.Row="1">
+                <Label Text="Fecha:" FontSize="11" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                <Entry x:Name="entryFecha" FontSize="11" VerticalOptions="Center" Margin="5,0,0,0" WidthRequest="71"></Entry>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Grid.Column="3" Grid.Row="0">
+                <Entry  Placeholder="Empresa" FontSize="15" TextColor="#F5811F" FontAttributes="Bold" VerticalOptions="Center" Margin="30,0,0,0"></Entry>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Grid.Column="3" Grid.Row="1">
+                <Label Text="Contacto:" FontSize="11" FontAttributes="Bold" Margin="30,0,0,0" VerticalOptions="Center"></Label>
+                <Entry Placeholder="Telefono" FontSize="11" VerticalOptions="Center" Margin="5,0,0,0"></Entry>
+            </HorizontalStackLayout>
+        </Grid>
+
+        <Label Grid.Row="2" Grid.Column="0"  Text="Linea" FontAttributes="Bold" BackgroundColor="#F5811F" FontSize="11" 
+               VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="-14,0,0,0"/>
+        <Label Grid.Row="2" Grid.Column="1" Text="Tipo" FontAttributes="Bold" BackgroundColor="#F5811F" FontSize="11"
+               VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+        <Label Grid.Row="2" Grid.Column="2" Text="Medida" FontAttributes="Bold" BackgroundColor="#F5811F" FontSize="11"
+                VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+        <Label Grid.Row="2" Grid.Column="3" Text="Q" FontAttributes="Bold" BackgroundColor="#F5811F" FontSize="11"
+               VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+        <Label Grid.Row="2" Grid.Column="4" Text="PrecioU" FontAttributes="Bold" BackgroundColor="#F5811F" FontSize="11"
+               VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+        <Label Grid.Row="2" Grid.Column="5" Text="PrecioT" FontAttributes="Bold" BackgroundColor="#F5811F" FontSize="11"
+               VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="0,0,-14,0"/>
+
+        <ListView ItemsSource="{Binding lista}" BackgroundColor="White" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="7">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="1.5*" />
+                                <ColumnDefinition Width="1.2*" />
+                                <ColumnDefinition Width="0.2*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Row="1" Grid.Column="0"  Text="{Binding Linea}" HorizontalTextAlignment="Center" FontSize="10"></Label>
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding Tipo}" HorizontalTextAlignment="Center" FontSize="10"></Label>
+                            <Label Grid.Row="1" Grid.Column="2" Text="{Binding Medidas}" HorizontalTextAlignment="Center" FontSize="10"></Label>
+                            <Label Grid.Row="1" Grid.Column="3" Text="{Binding Cantidad}" HorizontalTextAlignment="Center" FontSize="10"></Label>
+                            <Label Grid.Row="1" Grid.Column="4" Text="{Binding PrecioUnitario}" HorizontalTextAlignment="Center" FontSize="10"></Label>
+                            <Label Grid.Row="1" Grid.Column="5" Text="{Binding PrecioFinal}" HorizontalTextAlignment="Center" FontSize="10"></Label>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <HorizontalStackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="6" HorizontalOptions="Center">
             <Button x:Name="BtnFinalizarPresu" Text="Finalizar presupuesto" FontSize="13" CornerRadius="10" 
-                BackgroundColor="#FFB700" FontAttributes="Bold" Clicked="BtnFinalizarPresu_Clicked" HeightRequest="45" Padding="5,10,5,10"
-                    Margin="215,690,0,0"></Button>
-        
-    </AbsoluteLayout>
+                BackgroundColor="#FFB700" FontAttributes="Bold" 
+                    HeightRequest="45" Padding="5,10,5,10"
+                    Clicked="BtnFinalizarPresu_Clicked"></Button>
+            <Button x:Name="BtnNuevaAbertura" Text="Agregar abertura" FontSize="13" CornerRadius="10" 
+                BackgroundColor="#FFB700" FontAttributes="Bold"
+                    HeightRequest="45" Padding="20,0,20,0" Margin="0,0,20,0" Clicked="BtnNuevaAbertura_Clicked"></Button> 
+        </HorizontalStackLayout>
+    </Grid>
 </ContentPage>
+
 <!--<Entry TextColor="Black" Text="{Binding Linea}" Margin="5"></Entry>
         <Entry TextColor="Black" Text="{Binding Tipo}" Margin="5"></Entry>
         <Entry TextColor="Black" Text="{Binding Ancho}" Margin="5"></Entry>

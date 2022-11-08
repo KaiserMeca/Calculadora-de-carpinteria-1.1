@@ -5,11 +5,10 @@
         private Model model = new Model();
         public List<Abertura> aberturaActual = new List<Abertura>();
 
-        public void modena(string linea, string tipoIn, double ancho, double alto, double Paluminio, double Pvidrio, double Pacc, bool contra,
+        public void Ventanamodena(string linea, string tipoIn, double ancho, double alto, double Paluminio, double Pvidrio, double Pacc, bool contra,
             bool pre, int cant, int porcentaje)
         {
             Linea = linea;
-            Tipo = tipoIn;
             Ancho = ancho;
             Alto = alto;
             PrecioAluminio = Paluminio;
@@ -19,35 +18,36 @@
             Premarco = pre;
             Cantidad = cant;
             Porcentaje = porcentaje;
+            Abreviaturas(tipoIn);
             despachador(Tipo);
         }
 
-        public void despachador(string tipo)
+        public void despachador(string tipoDeAbertura)
         {
-            switch (tipo)
+            switch (tipoDeAbertura)
             {
-                case "Ventana corrediza":
+                case "V.Corrediza":
                     model.Guardar(ventanaCorrediza());
                     break;
-                case "Corrediza balcon":
+                case "P.Balcón":
                     model.Guardar(CorredizaBalcon());
                     break;
-                case "Ventana de abrir":
+                case "V.De abrir":
                     model.Guardar(ventanaRebatible());
                     break;
                 case "Banderola":
                     model.Guardar(ventanaRebatible());
                     break;
-                case "Dezplazable":
+                case "Desplazable":
                     model.Guardar(ventanaRebatible());
                     break;
-                case "Puerta de abrir simple":
+                case "P.Abrir":
                     model.Guardar(puertaDeAbrirSimple());
                     break;
-                case "Puerta de abrir 2 hojas":
+                case "P.Abrir2Hojas":
                     model.Guardar(PuertaDeAbrirDoble());
                     break;
-                case "Guia triple":
+                case "Guía triple":
                     model.Guardar(guiaTriple());
                     break;
                 case "Paño fijo":
@@ -55,6 +55,76 @@
                     break;
             }
         }
+        void Abreviaturas(string TipoDeAberturaAbreviada)
+        {
+            switch (TipoDeAberturaAbreviada)
+            {
+                case "Ventana corrediza":
+                    {
+                        Tipo = "V.Corrediza";
+                        break;
+                    }
+                case "Puerta balcón":
+                    {
+                        Tipo = "P.Balcón";
+                        break;
+                    }
+                case "Desplazable":
+                    {
+                        Tipo = "Desplazable";
+                        break;
+                    }
+                case "Banderola":
+                    {
+                        Tipo = "Banderola";
+                        break;
+                    }
+                case "Ventana de abrir":
+                    {
+                        Tipo = "V.De abrir";
+                        break;
+                    }
+                case "Puerta de abrir simple":
+                    {
+                        Tipo = "P.Abrir";
+                        break;
+                    }
+                case "Puerta de abrir 2 hojas":
+                    {
+                        Tipo = "P.Abrir2Hojas";
+                        break;
+                    }
+                case "Paño fijo":
+                    {
+                        Tipo = "Paño fijo";
+                        break;
+                    }
+                case "Guía triple":
+                    {
+                        Tipo = "Guía triple";
+                        break;
+                    }
+            }
+        }
+        public Abertura Cargar(int Punitario, int PxCant)
+        {
+            Abertura aberturaNueva = new()
+            {
+                Linea = Linea,
+                Tipo = Tipo,
+                Ancho = Ancho,
+                Alto = Alto,
+                Contramarco = Contramarco,
+                Premarco = Premarco,
+                Cantidad = Cantidad,
+                Porcentaje = Porcentaje,
+                PrecioUnitario = Punitario,
+                PrecioFinal = PxCant
+            };
+            aberturaActual.Add(aberturaNueva);
+            return aberturaNueva;
+        }
+
         #region ventanaCorrediza
         public Abertura ventanaCorrediza()
         {
@@ -228,24 +298,6 @@
             return Cargar(precioUnitario, precioXcant);
         }
         #endregion
-        public Abertura Cargar(int Punitario, int PxCant)
-        {
-            Abertura aberturaNueva = new()
-            {
-                Linea = Linea,
-                Tipo = Tipo,
-                Ancho = Ancho,
-                Alto = Alto,
-                Contramarco = Contramarco,
-                Premarco = Premarco,
-                Cantidad = Cantidad,
-                Porcentaje = Porcentaje,
-                PrecioUnitario = Punitario,
-                PrecioFinal = PxCant
-            };
-            aberturaActual.Add(aberturaNueva);
-            return aberturaNueva;
-        }
 
         double p200 = 1.25;
         double p201 = 0.60;
