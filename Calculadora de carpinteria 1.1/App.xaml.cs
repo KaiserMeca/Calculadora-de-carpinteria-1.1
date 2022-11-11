@@ -10,6 +10,5 @@ public partial class App : Application
 		InitializeComponent();
         MainPage = new NavigationPage(new ValidationView(secureStorage));
         //MainPage = new NavigationPage(new MainPage());
-
     }
 }

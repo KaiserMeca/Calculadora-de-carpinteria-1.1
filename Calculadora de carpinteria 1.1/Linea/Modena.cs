@@ -1,9 +1,12 @@
-﻿namespace Calculadora_de_carpinteria_1._1.Lineas
+﻿using System.Collections.ObjectModel;
+
+namespace Calculadora_de_carpinteria_1._1.Lineas
 {
     class Modena : Abertura 
     {
         private Model model = new Model();
-        public List<Abertura> aberturaActual = new List<Abertura>();
+        public ObservableCollection<Abertura> aberturaActual = new ObservableCollection<Abertura>();
+        public Abertura VentanaParaPresu { get; set; }
 
         public void Ventanamodena(string linea, string tipoIn, double ancho, double alto, double Paluminio, double Pvidrio, double Pacc, bool contra,
             bool pre, int cant, int porcentaje)
@@ -20,6 +23,21 @@
             Porcentaje = porcentaje;
             Abreviaturas(tipoIn);
             despachador(Tipo);
+        }
+        public void VentanaModena(Abertura abertura, string tipo)
+        {
+            Linea = abertura.Linea;
+            Ancho = abertura.Ancho;
+            Alto = abertura.Alto;
+            PrecioAluminio = abertura.PrecioAluminio;
+            PrecioVidrio = abertura.PrecioVidrio;
+            PrecioAccesorios = abertura.PrecioAccesorios;
+            Contramarco = abertura.Contramarco;
+            Premarco = abertura.Premarco;
+            Cantidad = abertura.Cantidad;
+            Porcentaje = abertura.Porcentaje;
+            Tipo = tipo;
+            despachador(tipo);
         }
 
         public void despachador(string tipoDeAbertura)
@@ -114,6 +132,9 @@
                 Tipo = Tipo,
                 Ancho = Ancho,
                 Alto = Alto,
+                PrecioAluminio = PrecioAluminio,
+                PrecioVidrio = PrecioVidrio,
+                PrecioAccesorios = PrecioAccesorios,
                 Contramarco = Contramarco,
                 Premarco = Premarco,
                 Cantidad = Cantidad,
@@ -122,6 +143,7 @@
                 PrecioFinal = PxCant
             };
             aberturaActual.Add(aberturaNueva);
+            VentanaParaPresu = aberturaNueva;
             return aberturaNueva;
         }
 
